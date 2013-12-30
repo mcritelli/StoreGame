@@ -23,7 +23,8 @@ protected:
 private:
 	static FirstState m_FirstState;
 	BaseShader shader;
-	
+	GLuint vertexBuffer, elapsedTimeUniform, elapsedTimeUniformFrag;
+	GLuint vao;
 };
 
 #endif

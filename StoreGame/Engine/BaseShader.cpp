@@ -92,6 +92,7 @@ bool BaseShader::InitializeShader(std::string vs, std::string fs, std::vector<st
 	glDetachShader(m_program, fshader);
 	glDeleteShader(fshader);
 
+
 	return true;
 }
 

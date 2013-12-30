@@ -21,35 +21,8 @@ int main(int argc, char* args[])
 	SDL_Event windowEvent;
 	
 	
-	//glewExperimental = GL_TRUE;
-	//glewInit();
-
-	//BaseShader test;
-	//std::vector<string> params;
-	//test.InitializeShader("vert.glsl", "frag.glsl", params);
-
-	////
-	//float vertices[] = {
-	//	0.0f, 0.5f, // vertex 1
-	//	0.5f, -0.5f, // vertex 2
-	//	-0.5f, -0.5f // vertex 3
-	//};
-
-	//GLuint positionBuffer;
-	//GLuint vao;
-
-	//glGenBuffers(1, &positionBuffer);
-	//glBindBuffer(GL_ARRAY_BUFFER, positionBuffer);
-	//glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	//glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-	//glGenVertexArrays(1, &vao);
-	//glBindVertexArray(vao);
-
-	//glUseProgram(test.m_program);
-	//glBindBuffer(GL_ARRAY_BUFFER, positionBuffer);
-	//glEnableVertexAttribArray(0);
-	//glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
+	glewExperimental = GL_TRUE;
+	glewInit();
 	
 	Game game;
 	game.init(FirstState::Instance());
