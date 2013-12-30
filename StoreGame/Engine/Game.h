@@ -13,6 +13,7 @@ class State;
 class Game {
 public:
 	void init(State*);
+	void handleEvents(SDL_Event);
 	void update();
 	void draw();
 	void ChangeState(State*);

@@ -15,6 +15,11 @@ void Game::init(State* initialState)
 	TIME_DIFF = TIME_CURRENT - TIME_LAST;
 }
 
+void Game::handleEvents(SDL_Event event)
+{
+	CURRENT_STATE->handleEvents(this, event);
+}
+
 void Game::update()
 {
 	if (DEBUG) std::cout << "INSIDE GAME UPDATE\n";
@@ -28,7 +33,7 @@ void Game::update()
 		TIME_DIFF = TIME_CURRENT - TIME_LAST;
 
 		//std::cout << "TIME_CURRENT: " << TIME_CURRENT << " | TIME_LAST: " << TIME_LAST << " | TIME_DIFF: " << TIME_DIFF << "\n";
-			
+		
 		CURRENT_STATE->update(this);
 	}
 	else // otherwise, cleanup the old state, then switch to the new one

@@ -33,6 +33,7 @@ int main(int argc, char* args[])
 	{
 		if (SDL_PollEvent(&windowEvent))
 		{
+			game.handleEvents(windowEvent);
 			if (windowEvent.type == SDL_QUIT) break;
 			if (windowEvent.type == SDL_KEYUP)
 			{
