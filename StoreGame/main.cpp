@@ -1,5 +1,5 @@
 #include <cstdio>
-#include <GL\glew.h>
+#include <..\GL\glew.h>
 #include "SDL.h"
 #include "SDL_opengl.h"
 #include "Engine\BaseShader.h"
@@ -10,8 +10,8 @@
 int main(int argc, char* args[])
 {
 	SDL_Init(SDL_INIT_VIDEO);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK,
 		SDL_GL_CONTEXT_PROFILE_CORE);
 
@@ -24,6 +24,18 @@ int main(int argc, char* args[])
 	glewExperimental = GL_TRUE;
 	glewInit();
 	
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
+
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+	glFrontFace(GL_CCW);
+
+	glEnable(GL_DEPTH_TEST);
+	glDepthMask(GL_TRUE);
+	glDepthFunc(GL_LEQUAL);
+	glDepthRange(0.0f, 1.0f);
+
 	Game game;
 	game.init(FirstState::Instance());
 	

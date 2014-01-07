@@ -4,10 +4,14 @@
 #include "..\Engine\State.h"
 #include "..\Engine\Game.h"
 #include "..\Engine\BaseShader.h"
+#include "..\Engine\TextRenderer.h"
 #include "..\glm\mat4x4.hpp"
 #include "..\glm\gtc\matrix_transform.hpp"
 #include "..\glm\gtx\transform.hpp"
 #include "..\glm\gtc\type_ptr.hpp"
+#include "..\glm\gtx\string_cast.hpp"
+
+#include "..\Engine\ModelLoader.h"
 
 using namespace std;
 
@@ -27,8 +31,13 @@ protected:
 private:
 	static FirstState m_FirstState;
 	BaseShader shader;
-	GLuint vertexBuffer, matrixUniform, indexBuffer;
+	GLuint vertexBuffer, matrixUniform, indexBuffer, normalBuffer;
 	GLuint vaoObject1, vaoObject2;
+	float x, y, z;
+	float rx, ry, rz;
+	glm::mat4 ProjectionMatrix, CameraMatrix;
+	int vertexCount;
+	TextRenderer textRenderer;
 };
 
 #endif
