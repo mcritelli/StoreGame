@@ -4,7 +4,6 @@
 #include "..\Engine\State.h"
 #include "..\Engine\Game.h"
 #include "..\Engine\BaseShader.h"
-#include "..\Engine\TextRenderer.h"
 #include "..\glm\mat4x4.hpp"
 #include "..\glm\gtc\matrix_transform.hpp"
 #include "..\glm\gtx\transform.hpp"
@@ -12,6 +11,8 @@
 #include "..\glm\gtx\string_cast.hpp"
 
 #include "..\Engine\ModelLoader.h"
+#include "..\Objects\Cube.h"
+#include "..\include\ftgl\freetype-gl.h"
 
 using namespace std;
 
@@ -37,7 +38,8 @@ private:
 	float rx, ry, rz;
 	glm::mat4 ProjectionMatrix, CameraMatrix;
 	int vertexCount;
-	TextRenderer textRenderer;
+	float sx, sy;
+	Cube testCube;
 };
 
 #endif

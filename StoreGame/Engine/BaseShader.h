@@ -21,7 +21,7 @@ public:
 	BaseShader(void);
 	BaseShader(const BaseShader&);
 	~BaseShader(void);
-	bool InitializeShader(std::string, std::string, std::vector<string>);
+	bool InitializeShader(std::string vs, std::string fs);
 protected:
 	bool checkCompileStatus(std::string, GLuint);
 	char* LoadSourceFile(const char*);

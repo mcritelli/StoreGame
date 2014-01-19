@@ -1,5 +1,6 @@
 #include "BaseShader.h"
 #define DEBUG false
+#define ERRORS true
 
 // Default constructor
 BaseShader::BaseShader(void)
@@ -17,7 +18,7 @@ BaseShader::~BaseShader(void)
 {
 }
 
-bool BaseShader::InitializeShader(std::string vs, std::string fs, std::vector<string> params)
+bool BaseShader::InitializeShader(std::string vs, std::string fs)
 {
 
 	// Load shader source
@@ -32,7 +33,7 @@ bool BaseShader::InitializeShader(std::string vs, std::string fs, std::vector<st
 	m_vsSource = LoadSourceFile(filename.c_str());
 	if (!m_vsSource)
 	{
-		if (DEBUG) std::cout << "VS FILE FAILED TO LOAD\n";
+		if (ERRORS) std::cout << "VS FILE FAILED TO LOAD\n";
 		return false;
 	}
 	if (DEBUG) std::cout << "m_vsSource: \n\n" << m_vsSource << "\n";
@@ -41,7 +42,7 @@ bool BaseShader::InitializeShader(std::string vs, std::string fs, std::vector<st
 	m_fsSource = LoadSourceFile(filename.c_str());
 	if (!m_fsSource)
 	{
-		if (DEBUG) std::cout << "FS FILE FAILED TO LOAD\n";
+		if (ERRORS) std::cout << "FS FILE FAILED TO LOAD\n";
 		return false;
 	}
 
@@ -76,13 +77,17 @@ bool BaseShader::InitializeShader(std::string vs, std::string fs, std::vector<st
 	
 	if (programStatus == GL_FALSE)
 	{
-		GLint infoLogLength;
-		glGetProgramiv(m_program, GL_INFO_LOG_LENGTH, &infoLogLength);
+		if (ERRORS)
+		{
+			GLint infoLogLength;
+			glGetProgramiv(m_program, GL_INFO_LOG_LENGTH, &infoLogLength);
 
-		GLchar* strInfoLog = new GLchar[infoLogLength + 1];
-		glGetProgramInfoLog(m_program, infoLogLength, NULL, strInfoLog);
-		std::cout << "Program failed to link:\n" << strInfoLog << "\n";
-		delete[] strInfoLog;
+			GLchar* strInfoLog = new GLchar[infoLogLength + 1];
+			glGetProgramInfoLog(m_program, infoLogLength, NULL, strInfoLog);
+			std::cout << "Program failed to link:\n" << strInfoLog << "\n";
+			delete[] strInfoLog;
+		}
+
 		return false;
 	}
 
