@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<GUILayout version="4">
+	<Window type="DefaultWindow" name="root">
+		<Window type="TaharezLook/StaticLabel" name="FPSCounter">
+			<Property name="Text" value="ASDFASDF" />
+			<Property name="Position" value="{ {0.40, 0}, {-0.42, 0} }" />
+		</Window>
+	</Window>
+</GUILayout>
