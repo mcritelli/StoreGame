@@ -12,7 +12,6 @@
 
 #include "..\Engine\ModelLoader.h"
 #include "..\Objects\Cube.h"
-#include "..\include\ftgl\freetype-gl.h"
 
 using namespace std;
 
