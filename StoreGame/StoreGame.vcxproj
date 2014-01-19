@@ -106,6 +106,8 @@
     <ClInclude Include="States\FirstState.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Models\Cube.mtl" />
+    <None Include="Models\monkey.mtl" />
     <None Include="Shaders\cube_frag.glsl" />
     <None Include="Shaders\cube_vert.glsl" />
     <None Include="Shaders\Frag_2dText.glsl" />
@@ -115,6 +117,10 @@
     <None Include="Shaders\triangle_vert.glsl" />
     <None Include="Shaders\Vert_2dText.glsl" />
     <None Include="Shaders\Vert_2dTextAtlas.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Models\Cube.obj" />
+    <Object Include="Models\monkey.obj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

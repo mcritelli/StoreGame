@@ -34,6 +34,9 @@
     <Filter Include="Header Files\Objects">
       <UniqueIdentifier>{8bc3ab69-3034-4596-9f6c-bb8fe8ed9fd1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Models">
+      <UniqueIdentifier>{a2208870-9d65-4ee0-8108-61f5d0d5b76d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -109,5 +112,19 @@
     <None Include="Shaders\Vert_2dTextAtlas.glsl">
       <Filter>Resource Files\Shaders</Filter>
     </None>
+    <None Include="Models\Cube.mtl">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+    <None Include="Models\monkey.mtl">
+      <Filter>Resource Files\Models</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Models\Cube.obj">
+      <Filter>Resource Files\Models</Filter>
+    </Object>
+    <Object Include="Models\monkey.obj">
+      <Filter>Resource Files\Models</Filter>
+    </Object>
   </ItemGroup>
 </Project>
